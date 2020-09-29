@@ -15,7 +15,7 @@ import resource from 'koa-static' //静态资源托管
 import path from 'path'
 
 import routes from './routes'
-import config from '../config/config';
+import config from '../config/config'; // 获取监听端口
 
  
 const app = new Koa();

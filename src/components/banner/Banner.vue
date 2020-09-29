@@ -3,6 +3,7 @@
 		<div class="topic-preview-wrapper">
 			<div class="topic-preview-list-wrapper">
 				<ul class="topic-preview" style="width: 500%;" ref="banner"> 
+					<!-- 数据求值在组件外，传值进入组件内 -->
 					<BannerItem v-for="item in bannerlist" :banner="item"></BannerItem>
 				</ul>
 			</div>

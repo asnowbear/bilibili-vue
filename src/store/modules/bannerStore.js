@@ -1,6 +1,10 @@
 import { bannerApi } from 'api'
 import * as TYPE from '../actionType/bannerType'
 
+// -------------------------------
+// 使用modules来管理state，使得state的
+// 管理更加颗粒化
+// -------------------------------
 const state = {
 	bannerlist: []
 }
@@ -13,6 +17,7 @@ const actions = {
 	bannerlist({commit, state, rootState}) {
 		rootState.requesting = true
 		commit(TYPE.BANNER_LIST_REQUEST)
+		
 		bannerApi.list().then((response) => {
 			rootState.requesting = false
 			commit(TYPE.BANNER_LIST_SUCCESS, response)
